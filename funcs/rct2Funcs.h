@@ -2,28 +2,20 @@
 #define RCT2FUNCS_H
 
 #ifndef dllPort
-	#define dllPort __declspec(dllexport)
+#define dllPort __declspec(dllexport)
 #endif
 
-dllPort
-int GetRct2Path(char *path);
+dllPort int GetRct2Path(char * path);
 
-typedef enum
-{
-	FAT_LOAD,
-	FAT_SAVE,
+typedef enum {
+    FAT_LOAD,
+    FAT_SAVE,
 } RCT2_FILE_ACCESSTYPE;
 
 #ifndef _RCT2_
-typedef enum
-{
-	FT_RCT2_OBJDAT,
-	FT_SC6,
-	FT_SV6
-} RCT2_FILETYPE;
-#endif//ndef _RCT2_
+typedef enum { FT_RCT2_OBJDAT, FT_SC6, FT_SV6 } RCT2_FILETYPE;
+#endif // ndef _RCT2_
 
-dllPort
-int BrowseRct2File(int accessType, char *retFilename, int fileType);
+dllPort int BrowseRct2File(int accessType, char * retFilename, int fileType);
 
-#endif //RCT2FUNCS_H
+#endif // RCT2FUNCS_H

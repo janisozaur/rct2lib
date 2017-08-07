@@ -1,19 +1,15 @@
 #define OBJDAT_ALL__CPP
 
-#include"objdat.h"
-#include<stdlib2.h>
-#include<codeShortcuts.h>
-#include<mem3.h>
+#include <codeShortcuts.h>
+#include <mem3.h>
+#include <stdlib2.h>
+#include "objdat.h"
 
-dllPort
-OBJDAT_FILE::
-AddImage(int imgI,IMG_256&img)
+dllPort OBJDAT_FILE::AddImage(int imgI, IMG_256 & img)
 {
 }
 
-dllPort
-OBJDAT_FILE::
-ClearImages()
+dllPort OBJDAT_FILE::ClearImages()
 {
 }
 
@@ -115,6 +111,6 @@ CopyImage
 		break;
 	}
 
-	#undef id
+#undef id
 }
 #endif

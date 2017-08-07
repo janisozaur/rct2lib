@@ -4,16 +4,15 @@
 #include "../../sv6ObjExtractDlg.h"
 
 #include <FileIO2.h>
+#include <stdio.h>
 #include <stdlib2.h>
 #include <string.h>
-#include <stdio.h>
 
 #include "SV6_EXTRACTOBJS.h"
 
-
 #define sz(a) (sizeof(a))
 
-#define Progress(a,b) (ProgressMsg(dlg,(a),(b)))
+#define Progress(a, b) (ProgressMsg(dlg, (a), (b)))
 
 ProgressMsg
 (
@@ -28,7 +27,7 @@ ProgressMsg
 
 MakeDatName(char *fullDatName,SV6_OBJDAT_HEADER *datHeader,char *baseDir)
 {
-	#define OBJX_FORMAT "obj%05.5d.DAT" 
+#define OBJX_FORMAT "obj%05.5d.DAT" 
 	char 
 		name[16],
 		path[0x180],
@@ -87,8 +86,8 @@ int ExtractImportObjects
 			(SV6_OBJDAT_HEADER_AND_CHUNK_HEADER*)
 			inBufferP;
 
-	#define iob (*imporObjBlock)
-	#define bytBuf ((BYTE*)inBufferP)
+#define iob (*imporObjBlock)
+#define bytBuf ((BYTE *)inBufferP)
 	DoImportObjectSkip:
 	{
 		j=0;
@@ -120,8 +119,8 @@ int ExtractImportObjects
 		
 		i+=j;
 	}
-	#undef bytBuf
-	#undef iob
+#undef bytBuf
+#undef iob
 
 	return i;
 	
@@ -138,15 +137,14 @@ ExtractSv6Objs
 {
 	DWORD i=0,chunkI;
 
-	#define s (sv6->fileDataA)
-	#define chunkAtI (*((SV6_CHUNK*)(&inFileStream[i])))
-	#define ifs inFileStream
-	#define cc chunkAtI
-	#define cch \
-		(cc.header)
-	#define equ(a,b) (memmove(a,b,sz(a)))
-	#define mm(a,b,c) (memmove(a,b,c))
-	#define ms0_v(a) (memset(&(a),0,sz(a)))
+#define s (sv6->fileDataA)
+#define chunkAtI (*((SV6_CHUNK *)(&inFileStream[i])))
+#define ifs inFileStream
+#define cc chunkAtI
+#define cch (cc.header)
+#define equ(a, b) (memmove(a, b, sz(a)))
+#define mm(a, b, c) (memmove(a, b, c))
+#define ms0_v(a) (memset(&(a), 0, sz(a)))
 
 	
 	DoExtractSv6Objs:
@@ -168,14 +166,14 @@ ExtractSv6Objs
 
 		s.header.numImbeddedCustomObjs=0;
 	}
-	#undef ms0_v
-	#undef mm
-	#undef equ
-	#undef cc
-	#undef cch
-	#undef ifs
-	#undef chunkAtI
-	#undef s
+#undef ms0_v
+#undef mm
+#undef equ
+#undef cc
+#undef cch
+#undef ifs
+#undef chunkAtI
+#undef s
 }
 
 ExtractSv6Objects
@@ -214,6 +212,5 @@ ExtractSv6Objects
 }
 
 #undef sz
-
 
 #endif

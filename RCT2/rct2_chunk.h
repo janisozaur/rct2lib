@@ -15,8 +15,8 @@ SV6_ENCODETYPE;
 
 typedef struct
 {
-	BYTE encodeType;
-	DWORD chunkSize_Encoded;
+    BYTE  encodeType;
+    DWORD chunkSize_Encoded;
 } SV6_CHUNKHEADER;
 
 #endif RCT2_CHUNK__H

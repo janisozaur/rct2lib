@@ -15,9 +15,6 @@ FixSV6Objects(CSV6_OBJ_FIXERDLG*appDlg,char*sv6File);
 
 FixSV6Objects(char*sv6File);
 
-#endif //SV6_FIXOBJECTS_H
+#endif // SV6_FIXOBJECTS_H
 
 #endif
-
-
-

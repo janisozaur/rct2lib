@@ -1,19 +1,18 @@
-#if 0 
+#if 0
 #include "SV6_FIXOBJECTS.H"
 
 FixSV6Objects(CSV6_OBJ_FIXERDLG*appDlg,char*sv6File)
 {
-	#define sz(a) sizeof(a)
-	#define sv6 (*pSv6)
+#define sz(a) sizeof(a)
+#define sv6 (*pSv6)
 
-	#define MSGFORMAT \
-		"%s %s\0"
+#define MSGFORMAT "%s %s\0"
 	char msgBuf[256];
 
 	SV6_FILE *pSv6;
 
 	//#define CHECKSIZES
-	#ifdef CHECKSIZES
+#ifdef CHECKSIZES
 	long 
 		sv6Sizes[5]=
 		{
@@ -468,13 +467,12 @@ FixSV6Objects(CSV6_OBJ_FIXERDLG*appDlg,char*sv6File)
 			(DWORD)((DWORD)(&sv6.fileDataA.parkData.unk0x2E83C0)-(DWORD)(&sv6.fileDataA.parkData)),
 			(DWORD)((DWORD)(&sv6.fileDataA.parkData.extraFileChecksum)-(DWORD)(&sv6.fileDataA.parkData)),
 		};
-	#endif //CHECKSIZES
+#endif // CHECKSIZES
 
-
-	#define UpdateMessage(a,b) \
-		appDlg->UpdateData(DDX_GET); \
-		appDlg->m_messageText.Format(MSGFORMAT,a,b); \
-		appDlg->UpdateData(DDX_SET)
+#define UpdateMessage(a, b)                                                                                                    \
+    appDlg->UpdateData(DDX_GET);                                                                                               \
+    appDlg->m_messageText.Format(MSGFORMAT, a, b);                                                                             \
+    appDlg->UpdateData(DDX_SET)
 
 	DoFixSV6Objects:
 	{
@@ -496,11 +494,9 @@ FixSV6Objects(CSV6_OBJ_FIXERDLG*appDlg,char*sv6File)
 
 		free(pSv6);
 	}
-	#undef sv6 
+#undef sv6
 
-	#undef sz
+#undef sz
 }
-
-
 
 #endif
